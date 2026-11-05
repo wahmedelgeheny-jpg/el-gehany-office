@@ -89,4 +89,4 @@ app.delete('/api/admin/requests/:id', limiter(120), requireAdmin, async (req, re
   try { const { error } = await db.from('service_requests').delete().eq('id', id); if (error) throw error; res.json({ ok: true }); }
   catch (e) { console.error('Delete:', e.message); res.status(500).json({ error: 'تعذر حذف الطلب.' }); }
 });
-app.listen(PORT, () => console.log(`الموقع يعمل على http://localhost:${PORT}`));
+;module.exports = app
